@@ -2,15 +2,21 @@ package com.kiran.generic;
 
 import java.util.ArrayList;
 
-class Demo {
+class Demo<T,E> {
 	
 	int a, b;
 
+	
+	public void mySecond(T t) {
+		System.out.println(t);
+	}
 }
 
 class Demo1 extends Demo {
 
 }
+
+
 
 class Tire {
 	public void myMethods(ArrayList<? extends Number> list) {
@@ -34,13 +40,17 @@ public class DemoGenerics {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Tire tire = new Tire();
-		tire.myMethods(new ArrayList<Number>());
-
-		tire.myMethod1(new ArrayList<Demo1>());
-
-		String string = tire.myMethod3(3, String.class);
-		System.out.println(string);
+		
+		Demo<String,String> demo=new Demo();
+		demo.mySecond("kiran");
+		
+		/*
+		 * Tire tire = new Tire(); tire.myMethods(new ArrayList<Number>());
+		 * 
+		 * tire.myMethod1(new ArrayList<Demo1>());
+		 * 
+		 * String string = tire.myMethod3(3, String.class); System.out.println(string);
+		 */
 	}
 
 }
