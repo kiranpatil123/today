@@ -20,6 +20,7 @@ class HigherNumberFoundException extends RuntimeException {
 	public HigherNumberFoundException(String arg0) {
 		super(arg0);
 	}
+	
 }
 
 class Home {
