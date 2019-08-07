@@ -81,16 +81,14 @@ public class DemoComparator {
 		Collections.sort(list, new IdComparator());
 
 		System.out.println("<<<<<<<< List before sorting >>>>>>>>> ");
-		
+
 		for (Teacher teacher : list) {
 			System.out.println(teacher.getTid());
 //			System.out.println(teacher.getTname());
 		}
 
-		
-		
 		Collections.sort(list, new NameComparator());
-		
+
 		System.out.println("<<<<<<<<<< List after sorting >>>>>>>>> ");
 
 		for (Teacher teacher : list) {

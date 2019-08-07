@@ -1,26 +1,20 @@
 package com.kiran;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class DemoArrayList {
 	public static void main(String[] args) {
-		/*
-		 * ArrayList<String> arrayList = new ArrayList<>(); arrayList.add("kiran");
-		 * System.out.println(arrayList.get(0));
-		 * 
-		 * System.out.println(Math.max(6, 7) );
-		 */
-		
-		String s1="kiran";
-		char[] charArray = s1.toCharArray();
-		
-		for(int i=0;i<charArray.length;i++) {
-			System.out.println(charArray[i]);
+		int a[] = { 1, 2, 3, 4,5,6,7,8,9 };
+
+		System.out.println("Array Length before copying "+a.length);
+		a = Arrays.copyOf(a, a.length + a.length);
+		for (int b : a) {
+			System.out.println(b);
 		}
 		
-		for(int i=charArray.length-1;i>=0;i--) {
-			System.out.println(charArray[i]);
-		}
+		System.out.println("Array Length after copying "+a.length);
 	}
+	
 
 }

@@ -16,7 +16,7 @@ class SuperClass extends SuperClass1 {
 }
 
 class SubClass extends SuperClass {
-	 protected int a = 80;
+	protected int a = 80;
 
 	int x = 90;
 
@@ -80,9 +80,24 @@ public class DemoMethodOverriding {
 		/*
 		 * SuperClass superClass = new SuperClass(); SubClass subClass = (SubClass)
 		 * superClass; System.out.println(subClass.x);
+
+		 *
 		 */
 		
+		SuperClass superClass=new SuperClass();
 		SubClass subClass=new SubClass();
-		System.out.println(subClass.x);
+		
+		if( subClass instanceof SuperClass) {
+			System.out.println("its correct");
+		}
+
+		Object o1 = new Integer(1);
+
+		String s1 = (String) o1;
+		System.out.println(s1);
+
+		/*
+		 * SubClass subClass=new SubClass(); System.out.println(subClass.x);
+		 */
 	}
 }

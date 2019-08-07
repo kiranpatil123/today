@@ -38,20 +38,30 @@ public class DemoHashMap {
 		 * System.out.println(entry.getKey() + "" + entry.getValue()); }
 		 */
 
-		LinkedHashMap<String, String> linked = new LinkedHashMap<>();
-		String put = linked.put("chutu", "MallaMadtya");
+		HashMap<String, Integer> map = new HashMap<>();
+		Integer put2 = map.put(null, 1);
+		Integer put4 = map.put("one", 1);
+		System.out.println(put4);
+		Integer put5 = map.put("one", 2);
+		System.out.println(put5);
+		Integer put = map.put("one", 3);
 		System.out.println(put);
-		String put2 = linked.put("hi", "hello");
-		String put3 = linked.put("hi", "hello1");
-		System.out.println(put2);
-		System.out.println(put3);
-		linked.put("bye", "see yoy");
+		map.put(null, 2);
+		map.put("one1", 2);
+		System.out.println(map);
 
-		
-		
-		for (Map.Entry<String, String> entry : linked.entrySet()) {
-			System.out.println(entry.getKey() + " : " + entry.getValue());
-		}
+		/*
+		 * LinkedHashMap<String, String> linked = new LinkedHashMap<>(); String put =
+		 * linked.put("chutu", "MallaMadtya"); System.out.println(put); String put2 =
+		 * linked.put("hi", "hello"); String put3 = linked.put("hi", "hello1");
+		 * System.out.println(put2); System.out.println(put3); linked.put("bye",
+		 * "see yoy");
+		 */
+
+		/*
+		 * for (Map.Entry<String, String> entry : linked.entrySet()) {
+		 * System.out.println(entry.getKey() + " : " + entry.getValue()); }
+		 */
 
 	}
 }

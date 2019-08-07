@@ -26,7 +26,11 @@ interface car extends Vehicle,Bike {
 	public void helloMethod();
 }
 
-class VehicleImpl extends Deemo implements car {
+interface car1{
+	public void sdd();
+}
+
+class VehicleImpl extends Deemo implements car,car1 {
 
 	/*
 	 * public String myMethod() {
@@ -54,6 +58,12 @@ class VehicleImpl extends Deemo implements car {
 
 	@Override
 	public void bikeMethod() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void sdd() {
 		// TODO Auto-generated method stub
 		
 	}

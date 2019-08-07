@@ -28,7 +28,7 @@ class Tire {
 	}
 
 	@SuppressWarnings("unchecked")
-	public <T> T myMethod3(int i, Class<T> t) {
+	public <T> T myMethod3(int i, Class<T> t /*T t*/) {
 		System.out.println("It entres to fetch the value");
 		
 //		if( instanceof String)
