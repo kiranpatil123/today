@@ -6,9 +6,38 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
+class Employee {
+	private int eid;
+	private String ename;
+
+	public int getEid() {
+		return eid;
+	}
+
+	public void setEid(int eid) {
+		this.eid = eid;
+	}
+
+	public String getEname() {
+		return ename;
+	}
+
+	public void setEname(String ename) {
+		this.ename = ename;
+	}
+}
+
 public class DemoGson {
 
 	public static void main(String[] args) {
+
+		/*
+		 * Employee emp = new Employee(); emp.setEid(1); emp.setEname("Kamala");
+		 * 
+		 * Gson gson1 = new Gson(); JsonElement jsonTree = gson1.toJsonTree(emp);
+		 * JsonObject asJsonObject2 = jsonTree.getAsJsonObject(); JsonElement
+		 * jsonElement4 = asJsonObject2.get("eid"); System.out.println(jsonElement4);
+		 */
 
 		JsonObject jsonObject1 = new JsonObject();
 		jsonObject1.addProperty("Eid", "1");
@@ -36,13 +65,14 @@ public class DemoGson {
 		Gson gson = new Gson();
 		String json = gson.toJson(s1);
 
-//		System.out.println(json);
+		// System.out.println(json);
 
 		JsonParser jsonParser = new JsonParser();
 		JsonElement element = jsonParser.parse(s1);
 		JsonObject asJsonObject = element.getAsJsonObject();
 		JsonElement jsonElement = asJsonObject.get("Employee");
 		System.out.println(jsonElement);
+
 		JsonElement jsonElement2 = jsonElement.getAsJsonObject().get("Eid");
 		System.out.println(jsonElement2);
 

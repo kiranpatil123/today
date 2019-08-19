@@ -13,6 +13,7 @@ class A {
 	int a = 0;
 
 	static {
+		int b=90;
 		System.out.println("inside 1 st static block");
 	}
 

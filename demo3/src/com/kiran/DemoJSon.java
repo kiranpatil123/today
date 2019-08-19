@@ -1,6 +1,11 @@
 package com.kiran;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import com.google.gson.Gson;
 import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 public class DemoJSon {
@@ -60,6 +65,34 @@ public class DemoJSon {
 		schema.add("schema", schemaJson);
 
 		System.out.println(schema.toString());
+
+		JsonElement jsonElement = schema.get("schema");
+		System.out.println(jsonElement);
+
+		JsonObject asJsonObject = jsonElement.getAsJsonObject();
+		JsonArray asJsonArray = asJsonObject.getAsJsonArray("required");
+		System.out.println(asJsonArray);
+		JsonObject asJsonObject2 = asJsonObject.getAsJsonObject("properties");
+		System.out.println(asJsonObject2);
+		/*
+		 * JsonElement remove = asJsonObject2.remove("patientId");
+		 * System.out.println(remove);
+		 */
+
+		JsonObject asJsonObject3 = asJsonObject2.remove("pulserate").getAsJsonObject();
+		System.out.println(asJsonObject3);
+
+		System.out.println(asJsonObject2);
+
+		Map<String, Integer> map = new HashMap<>();
+		map.put("hi", 1);
+		map.put("hello", 3);
+
+		Gson gson = new Gson();
+		JsonObject asJsonObject4 = gson.toJsonTree(map).getAsJsonObject();
+		System.out.println(asJsonObject4);
+		asJsonObject4.addProperty("hi1", 2);
+		System.out.println(asJsonObject4);
 
 	}
 }

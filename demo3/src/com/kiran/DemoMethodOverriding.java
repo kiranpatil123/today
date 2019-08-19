@@ -3,16 +3,34 @@ package com.kiran;
 import java.lang.reflect.Field;
 
 class SuperClass1 {
+	final int x = 90;
+	static int z = 30;
 	int y = 90;
+
+	public static void my() {
+		System.out.println("hi from super");
+	}
 }
 
 class SuperClass extends SuperClass1 {
 	public int a = 30;
 
+	/*
+	 * public int x = 30;
+	 * 
+	 * static int z=30;
+	 */
+
 	int myMethod(int a, int b) {
+		System.out.println(super.x + " " + super.z + " " + x + " " + z);
+		my();
+		super.my();
 		return a + b;
 	}
 
+	public static void my() {
+		System.out.println("hi from sup");
+	}
 }
 
 class SubClass extends SuperClass {
@@ -31,10 +49,14 @@ class SubClass extends SuperClass {
 
 public class DemoMethodOverriding {
 	public static void main(String[] args)
+
 	/*
 	 * throws NoSuchFieldException, SecurityException, IllegalArgumentException,
 	 * IllegalAccessException
 	 */ {
+
+		SuperClass superClass = new SuperClass();
+		superClass.myMethod(1, 2);
 		/*
 		 * MethodOverriding methodOverriding = new MethodOverriding(); Field field =
 		 * methodOverriding.getClass().getDeclaredField("a");
@@ -80,21 +102,19 @@ public class DemoMethodOverriding {
 		/*
 		 * SuperClass superClass = new SuperClass(); SubClass subClass = (SubClass)
 		 * superClass; System.out.println(subClass.x);
-
 		 *
+		 * 
 		 */
-		
-		SuperClass superClass=new SuperClass();
-		SubClass subClass=new SubClass();
-		
-		if( subClass instanceof SuperClass) {
-			System.out.println("its correct");
-		}
 
-		Object o1 = new Integer(1);
-
-		String s1 = (String) o1;
-		System.out.println(s1);
+		/*
+		 * SuperClass superClass=new SuperClass(); SubClass subClass=new SubClass();
+		 * 
+		 * if( subClass instanceof SuperClass) { System.out.println("its correct"); }
+		 * 
+		 * Object o1 = new Integer(1);
+		 * 
+		 * String s1 = (String) o1; System.out.println(s1);
+		 */
 
 		/*
 		 * SubClass subClass=new SubClass(); System.out.println(subClass.x);
